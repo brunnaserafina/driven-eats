@@ -63,6 +63,12 @@ h2 {
     box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
 }
 
+.selecionado {
+    box-sizing: border-box;
+    border: solid 5px;
+    border-color: #50D074;
+}
+
 img {
     border-radius: 4px;
     width: 144px;
@@ -95,7 +101,7 @@ img {
 }
 
 .cardapio > div {
-    overflow: auto;
+    overflow-x: scroll;
 }
 
 .fechar-pedido {
