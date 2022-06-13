@@ -9,7 +9,6 @@ let precoBebida;
 let nomeSobremesa;
 let precoSobremesa;
 
-
 function selecionarPrato(pratoSelecionado) {
     prato = document.querySelector(".pratos .selecionado");
     if (prato !== null) {
@@ -61,15 +60,64 @@ function selecionarSobremesa(sobremesaSelecionada) {
     }
 }
 
+function botaoconfirmacao() {
+    janelaConfirmacao = document.querySelector(".confirmacao");
+    janelaConfirmacao.classList.remove("escondido");
+
+    transparenciaBody = document.querySelector(".conteudo");
+    transparenciaBody.classList.add("transparencia");
+
+    const nomeDoPrato = document.querySelector(".nome-prato");
+    nomeDoPrato.innerHTML = `${nomePrato}`;
+
+    const nomeDaBebida = document.querySelector(".nome-bebida");
+    nomeDaBebida.innerHTML = `${nomeBebida}`;
+
+    const nomeDaSobremesa = document.querySelector(".nome-sobremesa");
+    nomeDaSobremesa.innerHTML = `${nomeSobremesa}`;
+
+    const valorDoPrato = document.querySelector(".valor-prato");
+    valorDoPrato.innerHTML = `${precoPrato}`;
+
+    const valorDaBebida = document.querySelector(".valor-bebida");
+    valorDaBebida.innerHTML = `${precoBebida}`;
+
+    const valorDaSobremesa = document.querySelector(".valor-sobremesa");
+    valorDaSobremesa.innerHTML = `${precoSobremesa}`;
+
+    const valorTotal = document.querySelector(".valor-total");
+    valorTotal.innerHTML = `R$ ${(Number(precoPrato) + Number(precoBebida) + Number(precoSobremesa)).toFixed(2)}`;
+
+
+}
+
+function cancelar() {
+    janelaConfirmacao = document.querySelector(".confirmacao");
+    janelaConfirmacao.classList.add("escondido");
+
+    transparenciaBody = document.querySelector(".conteudo");
+    transparenciaBody.classList.remove("transparencia");
+}
+
 function pedidoFechado() {
+
+    const nome = prompt("Qual seu nome completo?");
+    const endereco = prompt("Qual seu endereço completo?");
     const mensagem = ` Olá, gostaria de fazer o pedido:
 - Prato: ${nomePrato}
 - Bebida: ${nomeBebida}
 - Sobremesa: ${nomeSobremesa}
-Total: R$ ${(Number(precoPrato) + Number(precoBebida) + Number(precoSobremesa)).toFixed(2)}`
+Total: R$ ${(Number(precoPrato) + Number(precoBebida) + Number(precoSobremesa)).toFixed(2)}
 
-    window.open(`https://wa.me/5548996059421?text=${encodeURIComponent(mensagem)}`)
-
+Nome: ${nome}
+Endereço: ${endereco}
+`;
+    
+    if (nome!==null && endereco!==null && nome!=="" && endereco!=="") {
+        window.open(`https://wa.me/5548996059421?text=${encodeURIComponent(mensagem)}`)
+    } else {
+        alert("Você não digitou alguma informação!")
+    }
 }
 
 
