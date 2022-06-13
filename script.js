@@ -2,12 +2,22 @@ let prato;
 let bebida;
 let sobremesa;
 
-function selecionarPrato(elemento) {
+let nomePrato;
+let precoPrato;
+let nomeBebida;
+let precoBebida;
+let nomeSobremesa;
+let precoSobremesa;
+
+
+function selecionarPrato(pratoSelecionado) {
     prato = document.querySelector(".pratos .selecionado");
     if (prato !== null) {
         prato.classList.remove("selecionado");
     }
-    elemento.classList.add("selecionado");
+    pratoSelecionado.classList.add("selecionado");
+    nomePrato = document.querySelector(".pratos .opcoes .selecionado h4").innerHTML;
+    precoPrato = document.querySelector(".pratos .opcoes .selecionado p").innerHTML.replace("R$", "").replace(",", ".");
 
     const aguardandoPedido = document.querySelector(".aguardando-pedido");
     const pedidoConcluido = document.querySelector(".pedido-concluido");
@@ -17,13 +27,14 @@ function selecionarPrato(elemento) {
     }
 }
 
-
-function selecionarBebida(elemento) {
+function selecionarBebida(bebidaSelecionada) {
     bebida = document.querySelector(".bebidas .selecionado");
     if (bebida !== null) {
         bebida.classList.remove("selecionado");
     }
-    elemento.classList.add("selecionado");
+    bebidaSelecionada.classList.add("selecionado");
+    nomeBebida = document.querySelector(".bebidas .opcoes .selecionado h4").innerHTML;
+    precoBebida = document.querySelector(".bebidas .opcoes .selecionado p").innerHTML.replace("R$", "").replace(",", ".");
 
     const aguardandoPedido = document.querySelector(".aguardando-pedido");
     const pedidoConcluido = document.querySelector(".pedido-concluido");
@@ -33,12 +44,14 @@ function selecionarBebida(elemento) {
     }
 }
 
-function selecionarSobremesa(elemento) {
+function selecionarSobremesa(sobremesaSelecionada) {
     sobremesa = document.querySelector(".sobremesas .selecionado");
     if (sobremesa !== null) {
         sobremesa.classList.remove("selecionado");
     }
-    elemento.classList.add("selecionado");
+    sobremesaSelecionada.classList.add("selecionado");
+    nomeSobremesa = document.querySelector(".sobremesas .selecionado h4").innerHTML;
+    precoSobremesa = document.querySelector(".sobremesas .selecionado p").innerHTML.replace("R$", "").replace(",", ".");
 
     const aguardandoPedido = document.querySelector(".aguardando-pedido");
     const pedidoConcluido = document.querySelector(".pedido-concluido");
@@ -47,16 +60,6 @@ function selecionarSobremesa(elemento) {
         pedidoConcluido.classList.remove("escondido");
     }
 }
-
-
-let nomePrato = document.querySelector(".pratos .opcoes h4").innerHTML;
-let precoPrato = document.querySelector(".pratos .opcoes div p").innerHTML.replace("R$", "").replace(",", ".");
-
-let nomeBebida = document.querySelector(".bebidas .opcoes div h4").innerHTML;
-let precoBebida = document.querySelector(".bebidas .opcoes div p").innerHTML.replace("R$", "").replace(",", ".");
-
-let nomeSobremesa = document.querySelector(".sobremesas .opcoes h4").innerHTML;
-let precoSobremesa = document.querySelector(".sobremesas .opcoes p").innerHTML.replace("R$", "").replace(",", ".");
 
 function pedidoFechado() {
     const mensagem = ` Olá, gostaria de fazer o pedido:
