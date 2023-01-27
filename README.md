@@ -6,13 +6,15 @@
 
 ###
 
-<div align="center">
-  <img height="500" src="https://media.giphy.com/media/jM8OYpqPrADe6aksvg/giphy.gif"  />
+<div align="center" height="500">
+
+ <img height="600" src="https://user-images.githubusercontent.com/106851605/215218719-a3ad2210-4f01-49c2-bb46-edd70bc236d6.gif" />
+
 </div>
 
 ###
 
-<p align="center">Acesse a aplicação => https://brunnaserafina.github.io/driveneats-front</p>
+<p align="center">Acesse a aplicação de seu dispositivo mobile => https://brunnaserafina.github.io/driven-eats</p>
 
 ###
 
@@ -46,9 +48,14 @@
 
 ### ▶️ Rodando a aplicação
 
-- Crie ou selecione uma pasta com o nome de sua preferência;
-- Clone este repositório na pasta criada/selecionada;
-- Veja a página ao vivo no navegador com a extensão Live Server - caso utilize o VSCode.
+1. Crie ou selecione uma pasta com o nome de sua preferência;
+2. Clone este repositório na pasta criada/selecionada;
+
+```bash
+ $ git clone https://github.com/brunnaserafina/driven-eats.git
+```
+
+3. Execute o index.html
 
 ###
 <br />
