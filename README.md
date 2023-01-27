@@ -48,7 +48,7 @@
 
 - Crie ou selecione uma pasta com o nome de sua preferência;
 - Clone este repositório na pasta criada/selecionada;
-- Veja a página ao vivo no navegador com Live Server - caso utilize o VSCode.
+- Veja a página ao vivo no navegador com a extensão Live Server - caso utilize o VSCode.
 
 ###
 <br />
